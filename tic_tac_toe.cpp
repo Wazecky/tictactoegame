@@ -50,6 +50,16 @@ bool isValidMove(const std::vector<std::vector<char>>& board, int row, int col) 
     return (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ');
 }
 
+// Function to display the instructions for the player
+void displayInstructions() {
+    std::cout << "Welcome to Tic-Tac-Toe!" << std::endl;
+    std::cout << "Player is X, and AI is O." << std::endl;
+    std::cout << "To make a move, enter the row and column where you want to place your symbol." << std::endl;
+    std::cout << "For example, enter '1 2' to place your symbol in the first row, second column." << std::endl;
+    std::cout << "The board is a 3x3 grid with rows and columns numbered from 1 to 3." << std::endl;
+    std::cout << "Let's start the game!" << std::endl;
+}
+
 // Function to get the player's move
 void getPlayerMove(std::vector<std::vector<char>>& board) {
     int row, col;
@@ -84,8 +94,7 @@ void getAIMove(std::vector<std::vector<char>>& board) {
 int main() {
     std::vector<std::vector<char>> board(3, std::vector<char>(3, ' '));
 
-    std::cout << "Welcome to Tic-Tac-Toe!" << std::endl;
-    std::cout << "Player is X, and AI is O." << std::endl;
+    displayInstructions();
 
     bool playerTurn = true; // Player goes first
     bool gameRunning = true;
